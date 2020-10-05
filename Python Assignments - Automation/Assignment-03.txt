@@ -1,0 +1,51 @@
+Create a Mad Libs program that reads in text files and lets the user add their own text anywhere the word ADJECTIVE, NOUN, ADVERB, or VERB appears in the text file. 
+
+For example, a text file may look like this:
+
+	The ADJECTIVE panda walked to the NOUN and then VERB. A nearby NOUN was unaffected by these events.
+
+
+
+The program would find these occurrences and prompt the user to replace them.
+
+Enter an adjective:
+silly
+Enter a noun:
+chandelier
+Enter a verb:
+screamed
+Enter a noun:
+pickup truck
+
+
+
+The following text file would then be created:
+
+	The silly panda walked to the chandelier and then screamed. A nearby pickup truck was unaffected by these events.
+
+
+
+The results should be printed to the screen and saved to a new text file.
+
+
+new_content = ''
+with open('replace.txt', 'r') as f:
+    content = f.read()
+    content_list = content.split()
+    for index, word in enumerate(content_list):
+        if 'ADJECTIVE' in word:
+            text = input('Enter an adjective:\n')
+            content_list[index] = content_list[index].replace('ADJECTIVE', text)
+        if 'NOUN' in word:
+            text = input('Enter a noun:\n')
+            content_list[index] = content_list[index].replace('NOUN', text)
+        if 'VERB' in word:
+            text = input('Enter a verb:\n')
+            content_list[index] = content_list[index].replace('VERB', text)
+        if 'ADVERB' in word:
+            text = input('Enter an adverb:\n')
+            content_list[index] = content_list[index].replace('ADVERB', text)
+    new_content = ' '.join(content_list)
+print(new_content)
+with open('replace-new.txt', 'w') as f:
+    f.write(new_content)

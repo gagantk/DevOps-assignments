@@ -1,0 +1,10 @@
+Develop a script that creates, sets and displays two variables to the terminal when run. Within this script, add comments to explain what the script is doing, what each variable is and, using inline comments, what each command is doing.
+
+#!/bin/bash
+# This line says that this is bash script file
+
+MYUSERNAME="gagatk" # This command sets the value of username to MYUSERNAME variable
+MYPASSWORD="pass@123" # This command sets the value of password to MYPASSWORD variable
+
+echo "Username is $MYUSERNAME. Password is $MYPASSWORD" # echo command displays string onto the console.
+# $ followed by variable replaces it with the value of the variable

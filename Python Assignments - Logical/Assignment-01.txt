@@ -1,0 +1,16 @@
+﻿Search online for the Python documentation for the len() function. It will be on a web page titled “Built-in Functions.” Skim the list of other functions Python has, look up what the round() function does, and experiment with it in the interactive shell.
+abs()
+dict()
+int()
+float()
+format()
+list()
+range() etc.
+
+round(number) rounds off the number to the nearest integer value.
+
+
+
+Look up the round() and abs() functions on the Internet, and find out what they do. Experiment with them in the interactive shell.
+> round() returns the rounded off number to the nearest integer value.
+> abs() returns the absolute value of the provided number.
