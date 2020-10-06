@@ -1,0 +1,26 @@
+Develop a simple three item menu to display on the terminal. Your script, upon display of the menu, should prompt the user to choose one of the three available options. Using the 'case' statement from the course, display three unique messages depending on which number they chose, with a catch all message letting them know if they went outside the bounds of instructions.
+
+
+#!/bin/bash
+
+echo "MENU ITEMS:"
+echo "1. Chhole Bhature"
+echo "2. Samosa"
+echo "3. Roti"
+
+read -p "Choose one number of the corresponding item: " ITEM
+
+case $ITEM in
+  1)
+    echo "Great! You have choosen Chhole Bhature."
+    ;;
+  2)
+    echo "Nice! You have choosen Samosa."
+    ;;
+  3)
+    echo "Good! You have choosen Roti."
+    ;;
+  *)
+    echo "You have went outside the bounds of instructions. :("
+    ;;
+esac
