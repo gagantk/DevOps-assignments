@@ -62,6 +62,8 @@ docker inspect bfa1b3cac42b
 8080
 
 14. Try to access the Tomcat's home page from your machine/vm.
+It's working
+
 15. What is the disk size of Apache Tomcat image?
 docker images
 530MB
@@ -140,9 +142,15 @@ ls /
 Yes
 
 37. Do you have running tomcat container? If yes, Stop it and kill all tomcat container.
+docker container stop bc47b2b32ec2
+
 38. Create an index.html file with following code in it:-
 	<h1>This is Tomcat Container</h1>
 Now, Start a tomcat container in such a way that on hitting its URL for home page it should show the above html page.
+docker exec -it 5c1f280ce5bc sh
+echo "<h1>This is Tomcat Container</h1>" > webapps/ROOT/index.html
+exit
+
 39. type below command:-
 	docker images --help
 Now, try to run command that proves the concept of following three options:-
@@ -151,6 +159,10 @@ Now, try to run command that proves the concept of following three options:-
 3. -q
 
 write atleast 1 command using each option above and prove their concepts as described in the --help.
+
+docker images -a #Lists all images
+docker images -f "before=891fcd9c5b3a" #Filters images created before this image id
+docker images -q #Lists only the image ids
 
 
 40. type below command:-
@@ -163,3 +175,9 @@ Now, try to run command that proves the concept of following six options:-
 5. -l
 6. -s
 
+docker ps -a #Lists all the containers
+docker ps -f "status=exited" #Lists containers which are exited
+docker ps -q #Lists only the container ids
+docker ps -n 5 #Lists last 10 created containers
+docker ps -l #Lists the latest created container
+docker ps -s #Lists the containers along with file sizes
