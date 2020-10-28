@@ -50,7 +50,6 @@ docker run -d -p 443:443 --restart=always --name registry \
 sudo mkdir -p /etc/docker/certs.d/35.154.174.163
 sudo cp /home/ec2-user/registry/certs/domain.crt /etc/docker/certs.d/35.154.174.163
 docker login 35.154.174.163
-#didn't work in this method, so used insecure-registries
 docker pull ubuntu
 docker tag ubuntu 35.154.174.163/test-image:1
 docker push 35.154.174.163/test-image:1
